@@ -120,7 +120,7 @@ class CassandraTimelineStorage(BaseTimelineStorage):
         parameters = (
             trim_col, self.model._get_keyspace(), self.column_family_name, key, length + 1)
         results = execute(query % parameters)
-        
+
         # compatibility with both cassandra driver 2.7 and 3.0
         results_length = len(results.current_rows) if hasattr(results, 'current_rows') else len(results)
         if results_length < length:

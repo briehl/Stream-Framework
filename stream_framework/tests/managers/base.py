@@ -146,7 +146,7 @@ class BaseManagerTest(unittest.TestCase):
             self.assertEqual(f.count(), 2)
 
         self.manager.unfollow_user(
-            follower_user_id, target_user_id, async=False)
+            follower_user_id, target_user_id, asynch=False)
 
         # make sure only one activity was removed
         for f in self.manager.get_feeds(follower_user_id).values():
